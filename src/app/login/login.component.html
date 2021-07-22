@@ -1,0 +1,155 @@
+<div class="main">
+	<div class="login-form">
+
+				<div class="head">
+					<img src="../../assets/images/user.png" alt=""/>
+				</div>
+    <form [formGroup]="formGroup" (ngSubmit)="loginProcess()"
+      ngNativeValidate>
+      <div>
+        <label for="username" class="label-text form-label"><h1>Username</h1></label><br>
+        <input type="email" class="input100" value="abc@ymail.com" formControlName="email" placeholder="Username/Email" 
+		required>
+      </div>
+	  <div>
+        <label for="password" class="label-text form-label"><h1>Password</h1></label><br>
+        <input type="password" class="input100" value="password" formControlName="password" placeholder="Password"  required>
+	  </div>
+
+      <div class="col-6 mt-2">
+        <input type="checkbox" value="" id="autoSizingCheck">
+        <label for="autoSizingCheck" class="form-check-label form-label label-text pb-1" style="color: black;"> Remembe me </label>
+      </div>
+
+
+      <div class="container-login100-form-btn m-t-32">
+        <button class="form-control lh-sm mt-2 btn-login" style="color: black; background-color: chartreuse;"type="submit">
+          <h5>Login</h5>
+        </button>
+      </div>
+	  <div class="col-6 mt-2">
+        
+      </div>
+
+      <div class="col-md-12 col-xs-12 text-center  mt-2">
+		<p class="text-end"><a class=" forget-password" [routerLink]="['/send-link']" style="color:darkcyan;" ><h6>Forget Password ?</h6></a></p>
+        <p class="label-text" style="color: black;">Not a member?<a [routerLink]="['/signup']" class="register">Register</a>
+        </p>
+      </div>
+    </form>
+  </div>
+  </div>
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login V16</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+			<div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Account Login
+				</span>
+				<form class="login100-form validate-form p-b-33 p-t-5">
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text" name="username" placeholder="User name">
+						<span class="focus-input100" data-placeholder="&#xe82a;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100" data-placeholder="&#xe80f;"></span>
+					</div>
+
+					<div class="container-login100-form-btn m-t-32">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+</html>
+
+
+
+
+<div class="row ">
+  <div class="col-md-6 col-sm-6 image pt-5">
+  </div>
+
+  <div class=" col-md-6  col-sm-6 ">
+    <h3 class="h-color text-center mt-3 ">Login Form</h3>
+
+    <form class="form-theme row px-4 py-4 mb-4 rounded shadow" [formGroup]="formGroup" (ngSubmit)="loginProcess()"
+      ngNativeValidate>
+      <div class="col-md-12">
+        <label for="username" class="label-text form-label mb-0 mt-2"> Username</label>
+        <input type="email" class="form-control rounded " formControlName="email" placeholder="Username/Email" required>
+      </div>
+
+      <div class="col-md-12">
+        <label for="password" class="label-text form-label mb-0 mt-2">Password</label>
+        <input type="password" class="form-control rounded lh-sm" formControlName="password" placeholder="Password"
+          required>
+      </div>
+
+      <div class="col-6 mt-2">
+        <input type="checkbox" value="" class=" " id="autoSizingCheck">
+        <label for="autoSizingCheck" class="form-check-label form-label label-text pb-1"> Remembe me </label>
+      </div>
+
+      <div class="col-6 mt-2">
+        <p class="text-end"><a class=" forget-password" [routerLink]="['/send-link']">Forget Password ?</a></p>
+      </div>
+
+      <div class="col-md-12">
+        <button class="form-control lh-sm mt-2 btn-login" type="submit">
+          <h5>Login</h5>
+        </button>
+      </div>
+
+      <div class="col-md-12 col-xs-12 text-center  mt-2">
+        <p class="label-text">Not a member?<a [routerLink]="['/signup']" class="register">Register</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>-->

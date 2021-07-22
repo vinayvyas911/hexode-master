@@ -1,0 +1,24 @@
+/* body{
+    margin: 0 auto;
+    max-width: 800px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.meta-info{
+    color: gray;
+    margin-top: -28px;
+    font-size: 14px;
+} */
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
+
+.m-t-30 {
+    margin-top: 30px !important;
+  }
+
+.m-l-30{
+    margin-left: 30px !important;
+}
+
+.m{
+    margin:30px !important;
+}

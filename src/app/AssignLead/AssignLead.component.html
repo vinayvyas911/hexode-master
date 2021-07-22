@@ -1,0 +1,145 @@
+<div class="lead">
+  <div *ngFor="let lead of lead">
+    <div class="lead-image"></div>
+    <h1 class="title">{{ lead?.Name }} {{ lead?.LastName }}</h1>
+    <h2>{{ lead?.company_name }}</h2>
+    <h3>{{ lead?.designation }}</h3>
+    <h4>
+      {{ lead?.MobileNumber }}
+      <span
+        class="badge mb-2 bg-success text-white"
+        [innerHTML]="lead?.mobile_verified"
+      >
+      </span>
+    </h4>
+
+    <p [innerHTML]="lead?.mobile1"></p>
+    <p [innerHTML]="lead?.mobile2"></p>
+    <p [innerHTML]="lead?.pns_no"></p>
+    <p [innerHTML]="lead?.PhoneNumber"></p>
+    <p [innerHTML]="lead?.AlternateMobileNumber"></p>
+
+    <form class="row m g-3" [formGroup]="Assign" (ngSubmit)="AssignNow()">
+      <input type="hidden" [ngModel]="lead?._id" formControlName="id" />
+      <select formControlName="AssignedTo">
+        <option
+          *ngFor="let user of users"
+          [ngValue]="user.name"
+          [selected]="user.id === lead.Assignedto || user.Id===users[0].id"
+        >
+          {{ user.name }}
+        </option>
+      </select>
+
+      <button type="submit" class="btn btn-primary">Save changes</button>
+    </form>
+
+    <p [innerHTML]="lead?.id"></p>
+    <p [innerHTML]="lead?.email1"></p>
+    <p [innerHTML]="lead?.email2"></p>
+    <p [innerHTML]="lead?.website"></p>
+    <div class="accordion" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseOne"
+            aria-expanded="true"
+            aria-controls="collapseOne"
+          >
+            Address
+          </button>
+        </h2>
+        <div
+          id="collapseOne"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingOne"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <p [innerHTML]="lead?.ShowroomName"></p>
+            <p [innerHTML]="lead?.add1"></p>
+            <p [innerHTML]="lead?.add2"></p>
+            <p [innerHTML]="lead?.city"></p>
+            <p [innerHTML]="lead?.locality"></p>
+            <p [innerHTML]="lead?.landmark"></p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseTwo"
+            aria-expanded="true"
+            aria-controls="collapseTwo"
+          >
+            Contact Address
+          </button>
+        </h2>
+        <div
+          id="collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingTwo"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <p [innerHTML]="lead?.contact_address"></p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="true"
+            aria-controls="collapseThree"
+          >
+            Short Summary
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <p [innerHTML]="lead?.ShortSummary"></p>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button
+            class="accordion-button collapsed"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseThree"
+            aria-expanded="true"
+            aria-controls="collapseThree"
+          >
+            Summary
+          </button>
+        </h2>
+        <div
+          id="collapseThree"
+          class="accordion-collapse collapse"
+          aria-labelledby="headingThree"
+          data-bs-parent="#accordionExample"
+        >
+          <div class="accordion-body">
+            <p [innerHTML]="lead?.Summary"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

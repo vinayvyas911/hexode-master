@@ -1,0 +1,223 @@
+<h1>Add New Lead</h1>
+<form class="row m g-3" [formGroup]="uploadForm" (ngSubmit)="uploadfile()">
+  <div class="mb-3">
+    <h3><label for="formFile" class="form-label">Upload Excel</label></h3>
+    <div class="input-group mb-3">
+      <input
+        type="file"
+        name="xlsxFile"
+        class="form-control"
+        (change)="onFileSelect($event)"
+        id="inputGroupFile02"
+      />
+      <button class="input-group-text" type="submit">Upload</button>
+    </div>
+  </div>
+</form>
+<form class="row m g-3" [formGroup]="formGroup" (ngSubmit)="registerProcess()">
+  <div class="col-md-6">
+    <input
+      type="text"
+      class="form-control"
+      formControlName="Name"
+      id="Name"
+      placeholder="Name"
+    />
+  </div>
+  <div class="col-md-6">
+    <input
+      type="text"
+      class="form-control"
+      formControlName="LastName"
+      id="LastName"
+      placeholder="Last Name"
+    />
+  </div>
+  <div class="col-md-6">
+    <input
+      type="text"
+      class="form-control"
+      formControlName="ShowroomName"
+      id="ShowroomName"
+      placeholder="Showroom Name"
+    />
+  </div>
+
+  <div class="col-md-6">
+    <input
+      type="text"
+      class="form-control"
+      formControlName="designation"
+      id="designation"
+      placeholder="Designation"
+    />
+  </div>
+
+  <div class="col-md-6">
+    <input
+      type="text"
+      class="form-control"
+      formControlName="email1"
+      id="email1"
+      placeholder="Email"
+    />
+  </div>
+
+  <div class="col-md-6">
+    <input
+      type="text"
+      class="form-control"
+      formControlName="email2"
+      id="email2"
+      placeholder="Alternate Email"
+    />
+  </div>
+  <div class="addr row g-3">
+    <label for="address" class="form-label">Address</label>
+    <div class="col-12">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="add1"
+        id="add1"
+        placeholder="1234 Main St"
+      />
+    </div>
+    <div class="col-12">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="add2"
+        id="add2"
+        placeholder="Apartment, studio, or floor"
+      />
+    </div>
+    <div class="col-md-6">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="city"
+        id="city"
+        placeholder="City"
+      />
+    </div>
+
+    <div class="col-md-3">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="locality"
+        id="locality"
+        placeholder="Locality"
+      />
+    </div>
+    <div class="col-md-3">
+      <input
+        type="text"
+        class="form-control"
+        formControlName="landmark"
+        id="landmark"
+        placeholder="Landmark"
+      />
+    </div>
+    <div></div>
+  </div>
+  <div class="col-md-6">
+    <input
+      type="text"
+      class="form-control"
+      formControlName="website"
+      id="website"
+      placeholder="Website"
+    />
+  </div>
+  <div class="col-md-6">
+    <input
+      type="number"
+      class="form-control"
+      formControlName="PhoneNumber"
+      id="PhoneNumber"
+      placeholder="Phone Number"
+    />
+  </div>
+  <div class="col-md-6">
+    <input
+      type="number"
+      class="form-control"
+      formControlName="MobileNumber"
+      id="MobileNumber"
+      placeholder="Mobile Number"
+    />
+  </div>
+
+  <div class="col-md-6">
+    <input
+      type="number"
+      class="form-control"
+      formControlName="AlternateMobileNumber"
+      id="AlternateMobileNumber"
+      placeholder="Alternate Mobile Number"
+    />
+  </div>
+  <div class="col-md-6">
+    <input
+      type="number"
+      class="form-control"
+      formControlName="Mobile1"
+      id="Mobile1"
+      placeholder="Mobile Number-1"
+    />
+  </div>
+  <div class="col-md-6">
+    <input
+      type="number"
+      class="form-control"
+      formControlName="mobile2"
+      id="mobile2"
+      placeholder="Mobile Number-2"
+    />
+  </div>
+
+  <div class="col-md-12">
+    <input
+      type="text"
+      class="form-control"
+      formControlName="pns_no"
+      id="pns_no"
+      placeholder="Phone Numbers comma seperated"
+    />
+  </div>
+  <div class="col-12">
+    <input
+      type="text"
+      class="form-control"
+      formControlName="contact_address"
+      id="contact_address"
+      placeholder="Contact Address"
+    />
+  </div>
+
+  <div class="col-12">
+    <textarea
+      type="text"
+      class="form-control"
+      formControlName="ShortSummary"
+      id="ShortSummary"
+      placeholder="Short Summary"
+    ></textarea>
+  </div>
+
+  <div class="col-12">
+    <textarea
+      type="text"
+      class="form-control"
+      formControlName="Summary"
+      id="Summary"
+      placeholder="Summary"
+    ></textarea>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </div>
+</form>

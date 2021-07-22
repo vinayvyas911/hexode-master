@@ -1,0 +1,64 @@
+<header>
+  <div class="title header-row">
+    <div class="container">
+      <div class="initial-container">
+        <div class="float-right">
+          <div class="mail row-content">
+            <i class="mail-img fa fa-envelope-o"></i>
+            <span class="mail-id"> Info@hexode.in </span>
+          </div>
+          <div class="phone row-content">
+            <i class="phone-img"></i>
+            <span class="phone-no"> +91-989 729 1212 </span>
+          </div>
+          <div class="social row-content">
+            <a
+              href="https://twitter.com/stylemix_themes"
+              class="social-twitter socials"
+              target="_blank"
+              data-wpel-link="external"
+              rel="nofollow external noopener noreferrer"
+            >
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/stylemixthemes/"
+              class="social-facebook socials"
+              target="_blank"
+              data-wpel-link="external"
+              rel="nofollow external noopener noreferrer"
+            >
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a
+              href="https://www.youtube.com/channel/UCpuJgzrLAbVKCHDo_1lluKA"
+              class="social-youtube socials"
+              target="_blank"
+              data-wpel-link="external"
+              rel="nofollow external noopener noreferrer"
+            >
+              <i class="fa fa-youtube-play"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/stylemixthemes/"
+              class="social-instagram socials"
+              target="_blank"
+              data-wpel-link="external"
+              rel="nofollow external noopener noreferrer"
+            >
+              <i class="fa fa-instagram"></i>
+            </a>
+          </div>
+          <div class="Login">
+            <a *ngIf="!currentUser" [routerLink]="['login']"
+        ><b>Login</b></a
+      >
+      <a *ngIf="currentUser"  (click)="logout()">Logout</a>
+ 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</header>

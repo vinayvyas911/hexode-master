@@ -1,0 +1,50 @@
+<div
+  class="lead-add position-absolute end-0"
+  *ngIf="currentUser.role === 'admin'"
+>
+  <button routerLink="../addleads" class="btn btn-outline-dark" >
+    Add New Lead
+  </button>
+</div>
+<br /><br />
+<table class="table m-t-30 table-striped table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col"><small>Name</small></th>
+      <th scope="col"><small>Showroom Name</small></th>
+      <th scope="col"><small>Status</small></th>
+      <th scope="col"><small>Comment</small></th>
+      <th scope="col" *ngIf=" currentUser.role=== 'admin'"><small>Assigned To</small></th>
+      <th scope="col"><small>Action</small></th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr *ngFor="let lead of leads" >
+        <td *ngIf="lead?.Assignedto===currentUser.userName|| currentUser.role=== 'admin'">
+        {{ lead?.Name }}
+      </td>
+      <td *ngIf="lead?.Assignedto===currentUser.userName|| currentUser.role=== 'admin'">
+        <p [innerHTML]="lead?.ShowroomName"></p>
+      </td>
+      <td *ngIf="lead?.Assignedto===currentUser.userName|| currentUser.role=== 'admin'">
+        <p [innerHTML]="lead?.status"></p>
+      </td>
+      <td *ngIf="lead?.Assignedto===currentUser.userName|| currentUser.role=== 'admin'">
+        <p [innerHTML]="lead?.comment"></p>
+      </td>
+      <td *ngIf=" currentUser.role=== 'admin'">
+        <p  [innerHTML]="lead?.Assignedto"></p>
+        <p *ngIf="lead?.Assignedto===null">Null</p>
+      </td>
+      <td *ngIf="lead?.Assignedto===currentUser.userName|| currentUser.role=== 'admin'">
+       <Span > <button routerLink="/lead/{{ lead?.id }}" class="continue-reading" >
+          <i class="nav-icon fa fa-eye"></i>
+        </button></Span>
+        <Span> <button routerLink="/assign/{{ lead?.id }}" class="continue-reading" *ngIf="currentUser.role=== 'admin'">
+          <i class="fa fa-envelope-open"></i>
+        </button></Span>
+    </tr>
+  
+  </tbody>
+</table>
